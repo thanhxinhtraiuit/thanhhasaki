@@ -23,8 +23,8 @@ class OrderController extends Controller
     }
     public function index()
     {
-        // $user_id = Auth::user()->id;
-        $user_id = 1;
+        $user_id = Auth::user()->id;
+        // $user_id = 1;
         $orders = Order::where('user_id',$user_id)->with('PickUper','Receiver','getStatus')->get();
         // $aab = $order->getStatus->value;
         $data = [
@@ -363,8 +363,7 @@ class OrderController extends Controller
        
     }
 
-    public function getAllDoiSoat(){
-    }
+
 
     public function  doiSoatToanBoOrder(){
         $listIdUser = User::select('id')->get();
@@ -382,5 +381,15 @@ class OrderController extends Controller
         ];
         return response()->json($data);
        
+    }
+
+    public function getAllDoiSoat(){
+        $doisoat = Doisoat::all();
+        $data = [
+            'status'=>1,
+            'message'=>'ok',
+            'results' => $doisoat,
+        ];
+        return response()->json($data);
     }
 }
