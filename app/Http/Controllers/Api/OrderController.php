@@ -24,9 +24,7 @@ class OrderController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id;
-        // $user_id = 1;
         $orders = Order::where('user_id',$user_id)->with('PickUper','Receiver','getStatus')->get();
-        // $aab = $order->getStatus->value;
         $data = [
             'message' => 'ok',
             'status' => '1',
@@ -239,8 +237,8 @@ class OrderController extends Controller
         
         if($order->status != 1) return response()->json(['Error'=>'No update when status there']);
         $order->update($request->only(['phone','name','email']));
-
-        $results = ($order->with('PickUper','Receiver')->first());
+        
+        $results = ($order->with('PickUper','Receiver')->get());
         $data = [
             'status'=>1,
             'message' =>"ok",

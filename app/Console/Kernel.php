@@ -29,19 +29,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $user =User::all();
-        foreach($user as $element){
-            if($element->doisoat==1){
-
-            }
-            if($element->doisoat==2){
-                
-            }
-            if($element->doisoat==3){
-                
-            }
-        }
-        $schedule->command('inspire')->hourly();
+ 
+        $schedule->command('command:doisoat')->dailyAt('18:00');
     }
 
     /**

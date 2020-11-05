@@ -9,6 +9,7 @@ use Auth;
 use App\Commune;
 use App\District;
 use App\Province;
+use Carbon\Carbon;
 
 class KhohangController extends Controller
 {
@@ -17,6 +18,13 @@ class KhohangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function test(){
+
+        $data = [
+            'data'=> Carbon::now()->dayOfWeek,
+        ];
+        return response()->json($data);
+    }
     public function index()
     {
 

@@ -21,7 +21,7 @@ Route::group(['prefix' => 'auth'], function () {
 	Route::get('user/info', 'AuthController@user')->middleware('auth:api');	
 });
 
-Route::get('test','Api\OrderController@doiSoatToanBoOrder');
+Route::get('test','Api\KhohangController@test');
 
 
 Route::get('orders/status','Api\OrderController@updateStatus');
@@ -32,8 +32,8 @@ Route::group( ['middleware'=>'auth:api'],function(){
 	// Route::apiResource('user','Api\UserController');
 	Route::apiResource('khohang', 'Api\KhohangController')->only('index','store','update');
 	Route::apiResource('orders','Api\OrderController');
-	Route::get('orders/status','Api\OrderController@getStatus');
-	Route::post('orders/status','Api\OrderController@updateStatus');
+	Route::get('orders-status','Api\OrderController@getStatus');
+	Route::post('orders-status','Api\OrderController@updateStatus');
 	Route::get('doisoat','Api\OrderController@doisoat1donhang');
 	Route::get('list-status','Api\OrderController@getListStatus');
 
