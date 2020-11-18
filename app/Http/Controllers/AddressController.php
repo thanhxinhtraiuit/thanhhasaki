@@ -17,7 +17,8 @@ $ab=50+600;
 $ab=20;
         $ab=511111135;
         $ab=5465;
-        $ab = 40;//         /dd/dddd
+        $ab = 40;
+        $ab = 90;//         /dd/dddd
     	return response()->json($data);
 
     }
