@@ -11,7 +11,7 @@ class AddressController extends Controller
 {
     public function province(){
     	$data = Province::all();
-
+           $ab=$data;
     	return response()->json($data);
 
     }
