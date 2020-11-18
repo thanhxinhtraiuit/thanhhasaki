@@ -12,6 +12,7 @@ class AddressController extends Controller
     public function province(){
     	$data = Province::all();
            $ab=$data;
+//         /dd/dddd
     	return response()->json($data);
 
     }
