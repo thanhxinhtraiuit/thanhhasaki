@@ -13,7 +13,8 @@ class AddressController extends Controller
     	$data = Province::all();
            $ab=$data;
         $ab=50;
-//         /dd/dddd
+$ab=50+600;
+        //         /dd/dddd
     	return response()->json($data);
 
     }
