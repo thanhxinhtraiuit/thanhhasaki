@@ -15,6 +15,7 @@ class AddressController extends Controller
         $ab=50;
 $ab=50+600;
 $ab=20;
+        $ab=5465;
         $ab = 40;//         /dd/dddd
     	return response()->json($data);
 
