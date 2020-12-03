@@ -20,7 +20,7 @@ $ab=20;
         $ab = 40;
         $ab = 90;//         /dd/dddd
     	return response()->json($data);
-
+$ab=232;
     }
 
     public function district($province_code){
